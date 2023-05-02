@@ -6,7 +6,6 @@ using ToDoList.Application.Interfaces.Identity;
 
 namespace ToDoList.WebApi.Controllers
 {
-    [Route("api/[controller]")]
     [ApiController]
     public class AccountController : BaseApiController
     {

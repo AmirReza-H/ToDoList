@@ -1,6 +1,8 @@
 using ToDoList.Infrastructure.Identity;
 using FluentValidation.AspNetCore;
 using ToDoList.Application.DTOs.Account;
+using ToDoList.Infrastructure.Persistence;
+using ToDoList.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddIdentityInfrastructure(builder.Configuration);
 builder.Services.AddJwt(builder.Configuration);
+builder.Services.AddApplicationLayer();
+builder.Services.AddServices();
+builder.Services.AddPersistence(builder.Configuration);
+
 
 
 // FluentValidation
@@ -32,6 +38,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

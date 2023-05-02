@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ToDoList.Domain.TaskDomain.Enums
+﻿namespace ToDoList.Domain.ToDoTaskDomain.Enums
 {
-    internal class EnmImportanceLvl
+    public enum EnmImportanceLvl
     {
+        Lowest = 0,
+        Middle = 1,
+        Highest = 2
     }
 }

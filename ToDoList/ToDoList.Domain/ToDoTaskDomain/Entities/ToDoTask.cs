@@ -1,13 +1,14 @@
 ﻿using ToDoList.Domain.CategoryDomain.Entities;
+using ToDoList.Domain.Common;
 using ToDoList.Domain.ToDoTaskDomain.Enums;
 
 namespace ToDoList.Domain.ToDoTaskDomain.Entities
 {
-    public class ToDoTask
+    public class ToDoTask : BaseEntity
     {
-        public int Id { get; set; }
-        public int Name { get; set; }
+        public string Name { get; set; }
         public EnmImportanceLvl ImportanceLvl { get; set; }
+        public bool IsDone { get; set; }
 
         #region [ Navigations ]
         public Category Category { get; set; }
